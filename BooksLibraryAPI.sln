@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksLibraryAPI.Infra", "Bo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksLibraryAPI.Service", "BooksLibraryAPI.Service\BooksLibraryAPI.Service.csproj", "{4D4FC5C2-7321-4CEC-A363-D405541C643F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksLibraryAPI.Application", "BooksLibraryAPI.Application\BooksLibraryAPI.Application.csproj", "{F52A4FB6-FFDE-4818-94B0-999928898AB9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksLibraryAPI.API", "BooksLibraryAPI.API\BooksLibraryAPI.API.csproj", "{5D494668-4540-49FB-AC80-5CDE3EB2DD95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BooksLibraryAPI.API", "BooksLibraryAPI.API\BooksLibraryAPI.API.csproj", "{5D494668-4540-49FB-AC80-5CDE3EB2DD95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF71CE34-1294-41B8-9415-BE2107BACF7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF71CE34-1294-41B8-9415-BE2107BACF7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF71CE34-1294-41B8-9415-BE2107BACF7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF71CE34-1294-41B8-9415-BE2107BACF7A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9AD69AC0-4183-4D96-B4F8-C2A018C1679E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9AD69AC0-4183-4D96-B4F8-C2A018C1679E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AD69AC0-4183-4D96-B4F8-C2A018C1679E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,10 +29,6 @@ Global
 		{4D4FC5C2-7321-4CEC-A363-D405541C643F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D4FC5C2-7321-4CEC-A363-D405541C643F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D4FC5C2-7321-4CEC-A363-D405541C643F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F52A4FB6-FFDE-4818-94B0-999928898AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F52A4FB6-FFDE-4818-94B0-999928898AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F52A4FB6-FFDE-4818-94B0-999928898AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F52A4FB6-FFDE-4818-94B0-999928898AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D494668-4540-49FB-AC80-5CDE3EB2DD95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D494668-4540-49FB-AC80-5CDE3EB2DD95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D494668-4540-49FB-AC80-5CDE3EB2DD95}.Release|Any CPU.ActiveCfg = Release|Any CPU

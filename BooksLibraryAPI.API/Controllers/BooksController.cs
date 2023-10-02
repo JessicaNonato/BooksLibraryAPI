@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BooksLibraryAPI.API.Models;
-using BooksLibraryAPI.Application.Services;
-using Microsoft.Extensions.Configuration;
-using MongoDB.Driver;
-
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using BooksLibraryAPI.Domain.Entities;
+using BooksLibraryAPI.Service.Interfaces;
 
 namespace BooksLibraryAPI.API.Controllers
 {
@@ -11,26 +9,41 @@ namespace BooksLibraryAPI.API.Controllers
     [ApiController]
     public class BooksController : ControllerBase
     {
-        private readonly IConfiguration _configuration; 
-        private readonly BooksService _booksService;
-        
+        private readonly IBooksService _bookService;
 
-        public BooksController(BooksService booksService, IConfiguration configuration)
+        public BooksController(IBooksService bookService)
         {
-            _booksService = booksService;
-            _configuration = configuration;
+            _bookService = bookService;
         }
         
-
-        [HttpGet]
-        public JsonResult Get()
+        [HttpGet("{bookId}")]
+        public IActionResult Get([FromRoute] int bookId)
         {
-        MongoClient dbClient = new MongoClient(_configuration.GetConnectionString("BooksAPI"));
-
-        var dbList = dbClient.GetDatabase("Books").GetCollection<Book>("Books").AsQueryable();
-
-        return new JsonResult(dbList);
+            try
+            {
+                var book = _bookService.GetBookById(bookId);
+                return Ok(book);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+           
         }
 
+        //[HttpGet]
+        //public JsonResult GetAll()
+        //{
+
+        //    return Ok();
+        //}
+
+        [HttpPost]
+        public IActionResult CreateBook(BookEntity book)
+        {
+               _bookService.CreateBookAsync(book);
+               return Ok();
+
+        }
     }
 }

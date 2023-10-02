@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BooksLibraryAPI.Application": {
+    "BooksLibraryAPI.API": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

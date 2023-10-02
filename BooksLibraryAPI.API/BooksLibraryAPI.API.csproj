@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BooksLibraryAPI.Application\BooksLibraryAPI.Application.csproj" />
+    <ProjectReference Include="..\BooksLibraryAPI.Domain\BooksLibraryAPI.Domain.csproj" />
+    <ProjectReference Include="..\BooksLibraryAPI.Infra\BooksLibraryAPI.Infra.csproj" />
+    <ProjectReference Include="..\BooksLibraryAPI.Service\BooksLibraryAPI.Service.csproj" />
   </ItemGroup>
 
 </Project>
