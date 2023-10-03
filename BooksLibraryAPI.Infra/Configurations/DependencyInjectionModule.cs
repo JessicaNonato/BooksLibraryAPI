@@ -14,9 +14,13 @@ namespace BooksLibraryAPI.Infra.Configurations
             var bookStoreDatabaseSettings = configuration
                 .GetSection(nameof(BookStoreDatabaseSettings)).Get<BookStoreDatabaseSettings>();
 
+            var orderStoreDatabaseSettings = configuration
+                .GetSection(nameof(OrderStoreDatabaseSettings)).Get<OrderStoreDatabaseSettings>();
+
             services.AddSingleton<IRavenDbProvider, RavenDbProvider>();
             services.AddSingleton<IGenericRepository, GenericRepository>();
             services.AddSingleton(bookStoreDatabaseSettings);
+            services.AddSingleton(orderStoreDatabaseSettings);
             return services;
         }
     }

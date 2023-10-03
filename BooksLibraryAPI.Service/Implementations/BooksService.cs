@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using BooksLibraryAPI.Infra.Interfaces;
 using BooksLibraryAPI.Service.Interfaces;
@@ -33,13 +35,5 @@ namespace BooksLibraryAPI.Service.Implementations
             
         }
 
-        //private BookEntity GetBookInfo(OrderEntity order)
-        //{
-        //    order.Books.ForEach(book =>
-        //        {
-        //            var bookInfo = _genericRepository.GetDocumentById<BookEntity>($"book/{book.bookId}");
-        //        }
-        //    );
-        //}
     }
 }

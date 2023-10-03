@@ -12,6 +12,7 @@ namespace BooksLibraryAPI.API.Configuration
         {
             services.AddRavenDb(configuration);
             services.AddSingleton<IBooksService, BooksService>();
+            services.AddSingleton<IOrderService, OrderService>();
 
             return services;
         }

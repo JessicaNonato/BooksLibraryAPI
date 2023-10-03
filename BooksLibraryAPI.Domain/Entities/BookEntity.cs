@@ -10,6 +10,8 @@ namespace BooksLibraryAPI.Domain.Entities
         public int pages { get; set; }
         public string title { get; set; }
         public int year { get; set; }
-        public string editora { get; set; }
+        public string genre { get; set; }
+        public double price { get; set; }
+        public int quantity { get; set; }
     }
 }

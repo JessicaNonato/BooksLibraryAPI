@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using BooksLibraryAPI.Domain.Entities;
 
-
 namespace BooksLibraryAPI.Service.Interfaces
 {
-    public interface IBooksService
+    public interface IOrderService
     {
-        object GetBookById(int id); //change the return
-
-        Task CreateBookAsync(BookEntity book);
+        public Task SaveOrderAsync(OrderEntity order);
     }
 }
