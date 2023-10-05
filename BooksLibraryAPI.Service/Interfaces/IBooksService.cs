@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,12 @@ namespace BooksLibraryAPI.Service.Interfaces
 {
     public interface IBooksService
     {
-        object GetBookById(int id); //change the return
+        BookEntity GetBookById(string id);
 
         Task CreateBookAsync(BookEntity book);
+
+        Task<List<BookEntity>> GetAllBooks<BookEntity>();
+
+        Task DeleteBook<BookEntity>(string id);
     }
 }

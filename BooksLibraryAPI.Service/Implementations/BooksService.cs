@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,9 +18,17 @@ namespace BooksLibraryAPI.Service.Implementations
             _genericRepository = genericRepository;
         }
 
-        public object GetBookById(int id)
+        public BookEntity GetBookById(string id)
         {
-            throw new NotImplementedException();
+            try
+            {
+             return _genericRepository.GetDocumentById<BookEntity>($"book/{id}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public async Task CreateBookAsync(BookEntity book)
@@ -33,6 +42,32 @@ namespace BooksLibraryAPI.Service.Implementations
                 throw;
             }
             
+        }
+
+        public Task<List<BookEntity>> GetAllBooks<BookEntity>()
+        {
+            try
+            {
+                return _genericRepository.GetAllDocuments<BookEntity>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public Task DeleteBook<BookEntity>(string id)
+        {
+            try
+            {
+                return _genericRepository.DeleteAsync<BookEntity>($"book/{id}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
     }

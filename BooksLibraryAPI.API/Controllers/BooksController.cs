@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BooksLibraryAPI.Domain.Entities;
 using BooksLibraryAPI.Service.Interfaces;
@@ -17,7 +20,7 @@ namespace BooksLibraryAPI.API.Controllers
         }
         
         [HttpGet("{bookId}")]
-        public IActionResult Get([FromRoute] int bookId)
+        public IActionResult Get([FromRoute] string bookId)
         {
             try
             {
@@ -31,12 +34,12 @@ namespace BooksLibraryAPI.API.Controllers
            
         }
 
-        //[HttpGet]
-        //public JsonResult GetAll()
-        //{
-
-        //    return Ok();
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetAllBooks()
+        {
+            var books = _bookService.GetAllBooks<BookEntity>();
+            return Ok(books);
+        }
 
         [HttpPost]
         public IActionResult CreateBook(BookEntity book)
@@ -45,5 +48,21 @@ namespace BooksLibraryAPI.API.Controllers
                return Ok();
 
         }
+
+        [HttpDelete("{bookId}")]
+        public IActionResult DeleteBook([FromRoute] string bookId)
+        {
+            try
+            {
+                var book = _bookService.DeleteBook<BookEntity>(bookId);
+                return Ok(book);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
     }
 }
